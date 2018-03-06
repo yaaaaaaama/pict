@@ -9,7 +9,7 @@
         <td><%= @plan.overview %></td></tr>
     <tr><th>詳細</th>
         <td><%= @plan.detail %></td></tr>
-    <tr><th><%= render partial: 'goods/good', locals: { plan: @plan, goods: @goods } %></th>
+    <tr><th><div id="onishi"><%= render partial: 'goods/good', locals: { plan: @plan, goods: @goods } %></div></th>
         <td>
         <a href="/comments/new/<%= @plan.id %>">コメント</a><%= @plan.comment %></td>
     </tr>

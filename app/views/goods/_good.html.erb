@@ -1,5 +1,4 @@
 <% if user_signed_in? %>
-<%= plan.id %>
     <% if plan.good_user(current_user.id) %>
         <%= button_to plan_good_path(goods, plan_id: plan.id), method: :delete, id: "good-button", remote: true do %>
             <%= "いいねしました" %>
@@ -13,7 +12,7 @@
                 <span>
                     <%= plan.good %>
                 </span>
-        <% end %>                
+        <% end %>
     <% end %>
 <% else %>
     <%= "ログインしなさい" %>
