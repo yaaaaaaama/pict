@@ -1,0 +1,15 @@
+<h1>ホーム</h1>
+
+<table>
+    <% @plan.each do |obj| %>
+    <tr><th>タイトル</th>
+        <td><a href="/plans/show/<%= obj.id %>"><%= obj.title %></a></td></tr>
+    <tr><th>概要</th>
+        <td><%= obj.overview %></td></tr>
+    <tr><th>詳細</th>
+        <td><%= obj.detail %></td></tr>
+    <tr><th><%= render partial: 'goods/good', locals: {plan: obj, goods: @goods} %></th>
+        <td><a href="/comments/new/<%= obj.id %>">コメント</a><%= obj.comment %></td></tr>
+    </tr>
+    <% end %>
+</table>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Pict</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <a href="/plans/index/">Pict</a>
+    <a href="/plans/new/">作成</a>
+    
+
+    <% if user_signed_in? %>
+      <a href="/users/show/">マイページ</a>
+    <% else %>
+      <a href="/users/sign_in">ログイン</a>
+    <% end %>
+  </head>
+
+  <body>
+    <%= yield %>
+  </body>
+</html>

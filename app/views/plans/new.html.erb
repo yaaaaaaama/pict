@@ -1,0 +1,15 @@
+<h1>イベント登録画面</h1>
+
+
+<table>
+    <%= form_for(@plan, url:{controller: 'plans', action: "create"}) do |form| %>
+        <tr><th>タイトル</th>
+            <td><%=form.text_field :title %></td></tr>
+        <tr><th>概要</th>
+            <td><%= form.text_field :overview %></td></tr>
+        <tr><th>詳細</th>
+            <td><%= form.text_field :detail %></td></tr>
+            <td><%= form.submit "送信" %></td></tr>
+        </tr>   
+    <% end %>
+</table>

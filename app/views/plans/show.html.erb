@@ -1,0 +1,29 @@
+<h1>プラン詳細画面</h1>
+
+<table>
+    <tr><th>名前</th>
+        <td><%= @user.name %></td></tr>
+    <tr><th>タイトル</th>
+        <td><%= @plan.title %></td></tr>
+    <tr><th>概要</th>
+        <td><%= @plan.overview %></td></tr>
+    <tr><th>詳細</th>
+        <td><%= @plan.detail %></td></tr>
+    <tr><th><%= render partial: 'goods/good', locals: { plan: @plan, goods: @goods } %></th>
+        <td>
+        <a href="/comments/new/<%= @plan.id %>">コメント</a><%= @plan.comment %></td>
+    </tr>
+</table>
+
+<% if @comment != nil %>
+<% count = params[:num] %>
+<table>
+    <% @comment.each do |obj| %>
+    <tr><th>名前</th>
+        <% @user = User.find(obj.user_id) %>
+        <td><%= @user.name %></td></tr>
+    <tr><th><%= count -= 1 %></th>
+        <td><%= obj.content %></td></tr>
+    <% end %>
+</table>
+<% end %>

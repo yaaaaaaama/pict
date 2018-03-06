@@ -1,0 +1,7 @@
+<table>
+    <%= form_for(@comment, url:{controller: 'comments', action: "create", plan_id: params[:id]}) do |form| %>
+        <tr><th></th>
+            <td><%=form.text_field :content %><%= form.submit "コメント" %></td></tr>
+        </tr>   
+    <% end %>
+</table>
